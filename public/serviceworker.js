@@ -33,8 +33,8 @@ self.addEventListener('activate', (ev) => {
 self.addEventListener('fetch', (e) => {
     e.respondWith( 
         caches.match(e.request)
-            .then(Res => {
-                return Res || fetch(e.request).then(response => {
+            .then( () => {
+                return fetch(e.request).then(response => {
                     return caches.open(secondCache).then(cache => {
                         cache.put(e.request.url, response.clone());
                         return response;

@@ -29,6 +29,7 @@ export default function App() {
     }
     return (
         <div className="container">
+            <div className="alert alert-danger my-3">درحال حاضر تنها سه شهر تهران ، تبریز و اصفهان در دسترس است.</div>
             <Form setCity={setCity} handleClick={handleClick} setTime={setTime}/>
             <Weather data={weather}  />
         </div>
